@@ -1,4 +1,5 @@
-twitter-open-shortcut
-=====================
+#Twitter Open Shortcut
 
-Adds an 'o' shortcut to open any shared links in selected tweet in a new tab in the background. 
+Chrome extension for twitter that adds a keyboard shortcut ('o') to open any shared
+links in currently selected tweet in a new tab in the background. 
+If no link is found, opens permalink to tweet instead.

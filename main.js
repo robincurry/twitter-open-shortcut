@@ -8,20 +8,27 @@ document.addEventListener('keyup', function(e) {
     if (hovered.length != 0) {
       // find links
       var links = hovered.find('.twitter-timeline-link');
+      var processed = [];
 
       if (links.length != 0) {
         // open each link in a background tab.
         links.each(function(i){
-          simulateClick(links[i], true);
-          animateSharedLink(this);
+          if ($.inArray(this.href, processed) == -1){
+            simulateClick(links[i], true);
+            animateSharedLink(this);
+            processed.push(this.href);
+          }
           return true;
         });
       }
       else {
         // otherwise, open permalink if no other links found.
         var permalink = hovered.find('.js-permalink')[0];
-        simulateClick(permalink, true);
-        animatePermalink(permalink);
+        if ($.inArray(permalink.href, processed) == -1){
+          simulateClick(permalink, true);
+          animatePermalink(permalink);
+          processed.push(permalink.href);
+        }
       }
     }
 }, true);

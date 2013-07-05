@@ -4,7 +4,7 @@ document.addEventListener('keyup', function(e) {
     // Ignore when composing tweets...
     if (tag == 'input' || tag == 'textarea' || e.keyCode != 79)
         return true;
-    var hovered = $('.hovered-stream-item');
+    var hovered = $('.selected-stream-item');
     if (hovered.length != 0) {
       // find links
       var links = hovered.find('.twitter-timeline-link');
